@@ -380,6 +380,7 @@ th:last-child{
     text-align: right;
 }
 
+
 /* Account page */
 .account-page{
     padding: 50px 0;
@@ -498,4 +499,5 @@ form a{
     .cart-info p{
         display: none;
     }
+    
 }
