@@ -9,7 +9,7 @@
         <div class="row">
             {% for product in product_chunks %}
                 <div class="col-4">
-                    <a href="{% url 'detail_product' %}">
+                    <a href="{% url 'detail_product' product.id %}">
                         <img src="{{ product.image.url }}"></a>
                     <h4>{{ product.title }}</h4>
                     <div class="rating">
@@ -19,7 +19,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star-o"></i>
                     </div>
-                    <p>$50.00</p>
+                    <p>Rs.{{ product.price }}</p>
                 </div>
             {% endfor %}
         </div>
