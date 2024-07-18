@@ -7,10 +7,12 @@
             </div>
             <div class="col-2">
                 {% if messages %}
-                <div>
+                <div class="message-container">
 
                     {% for message in messages %}
-                    {{ message }}
+                    
+                   <li class="{{ message.tags }}"><i> {{ message }}</i></li>
+                   
                     {% endfor %}
                 </div>
                 {% endif %}
@@ -31,9 +33,9 @@
 
                     <form id="RegForm" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <input type="text" name="username" required maxlength="10" minlength="3" placeholder="Username">
+                        <input type="text" name="username" required maxlength="15" minlength="3" placeholder="Username">
                         <input type="email" name="email" required placeholder="Email">
-                        <input type="password" name="password" required minlength="6" placeholder="Password">
+                        <input type="password" name="password" required minlength="8" placeholder="Password">
                         <input type="text" name="address" required minlength="10" placeholder="Address">
                         <input type="text" name="phone" required minlength="10" placeholder="phone">
                    <button type="submit" name="register" class="btn">Register</button>
@@ -43,3 +45,23 @@
         </div>
     </div>
 </div>
+<style>
+
+.message-container{
+    background: #fff;
+    width: 300px;
+    height: fit-content;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.error{
+    color: darkred;
+}
+.success{
+    color: green;
+}
+</style>
